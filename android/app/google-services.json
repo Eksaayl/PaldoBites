@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "50933881229",
+    "project_id": "vbproject-692b8",
+    "storage_bucket": "vbproject-692b8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50933881229:android:31392b33839e26df6ac5c4",
+        "android_client_info": {
+          "package_name": "com.example.vbfinals"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-Oi_PVGp41f65n5IIVxNPMCktOfaT_AA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
