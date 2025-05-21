@@ -40,8 +40,10 @@ class RestaurantsScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 1,
         iconTheme: IconThemeData(color: Colors.black),
-        title: Text('New restaurants',
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+        title: Text(
+          'New restaurants',
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.pinkAccent,
@@ -169,10 +171,8 @@ class _RestaurantCard extends StatelessWidget {
                     spacing: 8,
                     runSpacing: 4,
                     children: [
-                      if (promo != null)
-                        _PromoChip(promo, Icons.local_offer, Colors.pink),
-                      if (discount != null)
-                        _PromoChip(discount, Icons.percent, Colors.deepOrange),
+                      if (promo != null) _PromoChip(promo, Icons.local_offer, Colors.pink),
+                      if (discount != null) _PromoChip(discount, Icons.percent, Colors.deepOrange),
                     ],
                   ),
                 ],
