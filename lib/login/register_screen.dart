@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'restaurants_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   @override
@@ -47,6 +48,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
         'lastLogin': FieldValue.serverTimestamp(),
       });
 
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => RestaurantsScreen()),
+      );
     } on FirebaseAuthException catch (e) {
       setState(() {
         _error = e.message;

@@ -4,6 +4,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'register_screen.dart';
 import 'forgot_password_screen.dart';
+import 'restaurants_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -26,6 +27,13 @@ class _LoginScreenState extends State<LoginScreen> {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: _email,
         password: _password,
+      );
+
+
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => RestaurantsScreen()),
       );
     } on FirebaseAuthException catch (e) {
       setState(() {
