@@ -67,6 +67,13 @@ class _LoginScreenState extends State<LoginScreen> {
 
         await FirebaseAuth.instance.signInWithCredential(credential);
       }
+
+      if (mounted) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (_) => RestaurantsScreen()),
+        );
+      }
     } catch (e) {
       setState(() {
         _error = 'Google sign-in failed: $e';

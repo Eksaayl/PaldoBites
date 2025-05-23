@@ -35,7 +35,7 @@ class _randomizerState extends State<randomizer> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          '🎲 Food Randomizer',
+          'Food Randomizer',
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
         backgroundColor: Color.fromRGBO(0, 83, 156, 1.0),
