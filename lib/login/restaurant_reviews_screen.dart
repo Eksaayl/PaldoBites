@@ -27,7 +27,6 @@ class RestaurantReviewsScreen extends StatelessWidget {
     }
   }
 
-
   @override
   Widget build(BuildContext context) {
     final currentUser = FirebaseAuth.instance.currentUser;
@@ -40,8 +39,8 @@ class RestaurantReviewsScreen extends StatelessWidget {
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Ratings & Reviews", style: TextStyle(color: Colors.black, fontSize: 16)),
-            Text(restaurantName, style: TextStyle(color: Colors.grey, fontSize: 13)),
+            Text("Ratings & Reviews", style: TextStyle(color: Color.fromRGBO(0, 83, 156, 1.0), fontSize: 20, fontWeight: FontWeight.bold)),
+            Text(restaurantName, style: TextStyle(color: Colors.grey, fontSize: 15)),
           ],
         ),
         actions: [
@@ -116,6 +115,7 @@ class _ReviewCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Colors.grey[50],
       margin: const EdgeInsets.symmetric(vertical: 10),
       elevation: 1,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -126,18 +126,18 @@ class _ReviewCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text(username, style: TextStyle(fontWeight: FontWeight.bold)),
+                Text(username, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
                 const Spacer(),
                 Row(
                   children: List.generate(
                     rating,
-                        (_) => Icon(Icons.star, color: Colors.orange, size: 16),
+                        (_) => Icon(Icons.star, color: Colors.yellow[800], size: 19),
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 6),
-            Text(date, style: TextStyle(color: Colors.grey)),
+            Text(date, style: TextStyle(color: Colors.grey[800])),
             const SizedBox(height: 8),
             Text(comment),
           ],
@@ -181,7 +181,7 @@ class _ReviewDialogState extends State<_ReviewDialog> {
                 const SizedBox(height: 12),
                 Text(
                   _selectedRating > 0 ? _ratingLabels[_selectedRating - 1] : '',
-                  style: TextStyle(fontSize: 16, color: Colors.orange),
+                  style: TextStyle(fontSize: 16, color: Color.fromRGBO(0, 83, 156, 1.0)),
                 ),
                 const SizedBox(height: 8),
                 Row(
@@ -190,7 +190,9 @@ class _ReviewDialogState extends State<_ReviewDialog> {
                     return IconButton(
                       icon: Icon(
                         Icons.star,
-                        color: _selectedRating > index ? Colors.orange : Colors.grey[300],
+                        color: _selectedRating > index
+                            ? Color.fromRGBO(0, 83, 156, 1.0)
+                            : Colors.grey[300],
                         size: 32,
                       ),
                       onPressed: () {
@@ -218,7 +220,7 @@ class _ReviewDialogState extends State<_ReviewDialog> {
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 14),
-                      backgroundColor: Colors.deepOrange,
+                      backgroundColor: Color.fromRGBO(0, 83, 156, 1.0),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                     ),
                     onPressed: () async {
