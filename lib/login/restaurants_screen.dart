@@ -147,6 +147,12 @@ class _RestaurantsScreenState extends State<RestaurantsScreen> with SingleTicker
                 MaterialPageRoute(builder: (_) => randomizer()),
               );
             }
+            else if (index == 2){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => ProfilePage(currentUserId: user?.uid ?? '')),
+              );
+            }
           },
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.restaurant), label: 'Food'),
